@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Outfit');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -32,38 +32,36 @@ figure {
 }
 
 .qr-card {
+    background-color: var(--white);
     box-sizing: border-box;
     width: 300px;
     min-height: 465px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0px 0px 30px #c0c0c0;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .qr-image {
     width: 270px;
     height: 270px;
-    border-radius: 15px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
 .qr-info {
-    margin-top: 20px;
-    font-weight: 700;
-    font-size: 20px;
+    text-align: center;
+    margin: 20px 5px 0px 5px;
     color: var(--dark-blue);
 }
 
-.qr-info p {
-    color: var(--grayish-blue);
-    margin-top: 15px;
-    font-weight: 400;
-    font-size: 15px;
+.qr-info h3 {
+    font-weight: bold;
+    font-size: 21px;
 }
 
 .qr-info p {
     color: var(--grayish-blue);
     margin-top: 15px;
-    font-weight: 400;
+    font-weight: normal;
     font-size: 15px;
 }
