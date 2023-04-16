@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
+/* Default */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Outfit', sans-serif;
 }
 
+/* Variables */
 :root {
     --white: hsl(0, 0%, 100%);
     --light-gray: hsl(212, 45%, 89%);
@@ -13,6 +15,7 @@
     --dark-blue: hsl(218, 44%, 22%);
 }
 
+/* Global */
 body {
     height: 100vh;
     background-color: var(--light-gray);
@@ -24,12 +27,15 @@ figure {
     align-items: center;
 }
 
+/* Containers */
 .main-container {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/* Card */
 
 .qr-card {
     background-color: var(--white);
