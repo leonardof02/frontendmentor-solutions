@@ -150,6 +150,10 @@ body {
     border-color: var(--error-color);
 }
 
+.error input:focus, .error input:hover {
+    border-color: red;
+}
+
 @media screen and (min-width: 540px) {
     .divider {
         align-items: end;
@@ -164,6 +168,10 @@ body {
     .input-form input {
         font-size: 20px;
         max-width: 110px;
+    }
+
+    .divider {
+        margin-top: 30px;
     }
 
     .arrow {
