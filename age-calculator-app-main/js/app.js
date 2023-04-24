@@ -19,9 +19,13 @@ function validateMonth( monthOfBirth ) {
 function validateDay( dayOfBirth) {
     const month = Number.parseInt( monthOfBirthInput.value );
     const year = Number.parseInt( yearOfBirthInput.value );
-    const daysOfMonthOfBirth = new Date( year, month, 0 ).getDate();
-    if( ! Number.isInteger( dayOfBirth ) || dayOfBirth < 1 || dayOfBirth > daysOfMonthOfBirth )
+    if( ! Number.isInteger( dayOfBirth ) || dayOfBirth < 1 || dayOfBirth > 31 )
         throw new TypeError("Must be a valid day");
+
+    const daysOfMonthOfBirth = new Date( year, month, 0 ).getDate();
+    if( dayOfBirth > daysOfMonthOfBirth )
+        throw new TypeError("This month doesn't have this numbers of days");
+        
 }
 
 function isEmptyString( string ) {
@@ -33,13 +37,40 @@ function calcAge( day, month, year ) {
     const birthDate = new Date(year, month, day);
     const currentDate = new Date( Date.now() );
 
-    const age = {
-        years: currentDate.getFullYear() - birthDate.getFullYear(),
-        months: currentDate.getMonth() - birthDate.getMonth(),
-        day: currentDate.getDate() - birthDate.getDate()
-    }
+    // Init the age
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    let months, days;
 
-    return age;
+    // Calc the difference in time
+    const monthDifference = currentDate.getMonth() - birthDate.getMonth();
+    const daysDifference  = currentDate.getDate()  - birthDate.getDate();
+
+    // If the current month is before the birthday's month
+    if( monthDifference < -1 || currentDate.getDate() < birthDate.getDate() ) {
+        years--;
+        months =  12 - (birthDate.getMonth() - currentDate.getMonth()) + 1;
+    }
+    else if( monthDifference === -1 ) {
+        
+        months = 0;
+    }
+    else
+        months =  monthDifference + 1;
+
+    // If the current day is before the birthday's day
+    if( daysDifference < 0 ) {
+        const daysInLastMonth = new Date( currentDate.getFullYear(), currentDate.getMonth() - 1, 0 ).getDate();
+        days = daysInLastMonth - birthDate.getDate() + currentDate.getDate();
+        months--;
+    }
+    else
+        days = daysDifference;
+
+    return {
+        years,
+        months,
+        days
+    };
 }
 
 // ---------------------------- UI Control
@@ -111,7 +142,7 @@ calcButton.onclick = () => {
     }
     else {
         const age = calcAge( dayOfBirth, monthOfBirth, yearOfBirth );
-        dayOfBirthOutput.innerText = age.day;
+        dayOfBirthOutput.innerText = age.days;
         monthOfBirthOutput.innerText = age.months;
         yearOfBirthOutput.innerText = age.years;
     }
