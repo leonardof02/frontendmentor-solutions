@@ -1,0 +1,28 @@
+@import "../global.css";
+
+.step-button {
+    margin: 10px;
+}
+
+.step-button button {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: solid 1px;
+    color: var(--white);
+    font-family: 'Ubuntu Medium';
+    font-size: 23px;
+}
+
+.step-button button:hover {
+    color: var(--marine-blue);
+    background-color: var(--pastel-blue);
+    border-color: var(--pastel-blue);
+}
+
+.step-button .active {
+    color: var(--marine-blue);
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+}

@@ -1,0 +1,12 @@
+@import "../global.css";
+
+.steps-container {
+    height: 170px;
+    background-image: url("../assets/images/bg-sidebar-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
