@@ -16,10 +16,10 @@
     --white: hsl(0, 0%, 100%);
 
     /* Sizes */
-    --title-size: 32px;
-    --subtitle-size: 28px;
-    --label-size: 22px;
-    --field-size: 25px;
+    --title-size: 30px;
+    --subtitle-size: 25px;
+    --field-size: 22px;
+    --label-size: 20px;
 }
 
 @font-face {
@@ -38,7 +38,7 @@
 @font-face {
     font-family: 'Ubuntu Bold';
     src: url("./assets/fonts/Ubuntu-Medium.ttf");
-    font-weight: 700;
+    font-weight: bold;
 }
 
 * {
@@ -46,12 +46,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu Regular';
-    font-size: 28px;
 }
 
 body {
     min-height: 100vh;
     background-color: var(--magnolia);
+}
+
+@media screen and (min-width: 700px) {
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
 }
 
 h1, h2, h3, h4 {

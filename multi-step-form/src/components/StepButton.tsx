@@ -8,14 +8,14 @@ interface StepButtonProps {
     stepName?: String
 }
 
-function StepButton({ active, step, /* stepName */  }: StepButtonProps) {
+function StepButton({ active, step, stepName, handleClick }: StepButtonProps) {
     return <div className="step-button">
-        <label htmlFor="">
-            {/* <div className="step-info">
-                <p>Step #{ step.toString() }</p>
+        <label htmlFor="" className="step-controls">
+            <div className="step-info">
+                <p>{ `Step #${step}` }</p>
                 <h3>{ stepName }</h3>
-            </div> */}
-            <button className={ active ? "active" : ""}>
+            </div>
+            <button className={ active ? "active" : ""} onClick={ handleClick }>
                 { step.toString() }
             </button>
         </label>

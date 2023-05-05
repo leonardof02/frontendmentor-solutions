@@ -4,15 +4,44 @@
     margin: 10px;
 }
 
+.step-info {
+    display: none;
+}
+
 .step-button button {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     background-color: transparent;
     border: solid 1px;
     color: var(--white);
     font-family: 'Ubuntu Medium';
-    font-size: 23px;
+    font-size: 18px;
+}
+
+.step-info {
+    display: none;
+    color: var(--white);
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.step-info p {
+    color: var(--light-gray);
+    margin-bottom: 5px;
+}
+
+.step-info h3 {
+    font-size: 16px;
+}
+
+.step-controls {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .step-button button:hover {
@@ -25,4 +54,10 @@
     color: var(--marine-blue);
     background-color: var(--light-blue);
     border-color: var(--light-blue);
+}
+
+@media screen and (min-width: 700px) {
+    .step-info {
+       display: flex;
+    }
 }

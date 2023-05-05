@@ -1,0 +1,46 @@
+@import "../global.css";
+
+.switch-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-panel span {
+    font-size: 14px;
+    font-family: 'Ubuntu Medium';
+}
+
+.switch-container {
+    width: 40px;
+    height: 22px;
+    margin: 5px 20px;
+    padding: 5px;
+    background-color: var(--marine-blue);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-panel .switch {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.switch-panel .disabled {
+    color: var(--cool-gray);
+}
+
+.switch-panel .onRight {
+    transform: translateX(10px);
+}
+
+.switch-panel .onLeft {
+    transform: translateX(-10px);
+}
+
+

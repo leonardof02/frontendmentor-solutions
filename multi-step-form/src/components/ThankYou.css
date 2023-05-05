@@ -1,0 +1,37 @@
+@import "../global.css";
+
+.thank-you {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.thank-you img {
+    width: 50px;
+    height: 50px;
+}
+
+.thank-you > * {
+    margin: 10px;
+    line-height: 1.5;
+}
+
+.thank-you p {
+    color: var(--cool-gray);
+    font-size: 16px;
+}
+
+.thank-you h2 {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 700px) {
+    .thank-you {
+        width: 400px;
+    }
+}
