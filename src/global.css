@@ -1,0 +1,208 @@
+:root {
+    --background-black: #1e1e20;
+    --dark-gray: #252529;
+    --gray: #434343;
+    --white: #e0e0d7;
+    --light-gray: #dfdfd6;
+    --black: #161618;
+
+    --blue: #2a29cc;
+    --dark-blue: #131466;
+    --light-blue: #6777cc;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url("./assets/FiraCode-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    font-family: 'Fira Code';
+    font-weight: normal;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background-black);
+}
+
+button {
+    background-color: var(--blue);
+}
+
+.hero {
+    height: 100vh;
+    background-image: url("./assets/backgroun-main-page.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+a {
+    font-weight: bold;
+}
+
+button {
+    border: 1px solid var(--light-blue);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+button:hover {
+    border: 1px solid var(--blue);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--light-blue);
+    color: var(--black);
+    cursor: pointer;
+}
+
+.hero-info h1 {
+    text-shadow: 0 0 10px var(--gray);
+    font-size: 35px;
+    padding: 4px;
+    font-weight: bolder;
+}
+
+.hero-info h2 {
+    margin: 20px 0px;
+    background-color: var(--background-black);
+    font-size: 16px;
+}
+
+.challenges-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.challenges-section h3 {
+    font-weight: bold;
+    padding: 30px;
+    font-size: 28px;
+}
+
+.challenges-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-card {
+    width: 300px;
+    min-height: 320px;
+    border: 1px solid var(--gray);
+    margin: 10px;
+    background-color: var(--dark-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.challenge-card h4 {
+    padding: 20px 10px;
+    font-size: 20px;
+}
+
+.challenge-card a {
+    text-decoration: none;
+}
+
+.img-container {
+    overflow: hidden;
+}
+
+.challenge-card img {
+    aspect-ratio: 16 / 9;
+    width: 300px;
+    height: auto;
+    transition: transform .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    cursor: pointer;
+}
+
+.challenge-card img:hover {
+    transform: scale(1.2);
+}
+
+.tools {
+    padding: 5px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.tools img {
+    width: 25px;
+    height: 25px;
+}
+
+footer {
+    font-size: 20px;
+    padding: 15px;
+    background-color: var(--black);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .links {
+    font-size: 16px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    margin: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (min-width: 700px) {
+    .challenges-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: center;
+        align-items: center;
+    }
+
+    .hero-info h1 {
+        font-size: 60px;
+    }
+    
+    .hero-info h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .challenges-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-self: center;
+        align-items: center;
+    }
+
+    .hero-info h1 {
+        text-shadow: none;
+        font-size: 45px;
+        background-color: var(--light-gray);
+        color: var(--dark-gray);
+    }
+    
+    .hero-info h2 {
+        font-size: 24px;
+    }
+}
