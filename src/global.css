@@ -126,11 +126,11 @@ button:hover {
     aspect-ratio: 16 / 9;
     width: 300px;
     height: auto;
-    transition: transform .5s cubic-bezier(0.39, 0.575, 0.565, 1);
     cursor: pointer;
+    transition: transform .5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-.challenge-card img:hover {
+.challenge-card .project-img:hover {
     transform: scale(1.2);
 }
 
