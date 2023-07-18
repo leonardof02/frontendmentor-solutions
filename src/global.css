@@ -1,5 +1,6 @@
 :root {
     --background-black: #1e1e20;
+    --background-black-opacity: #070707ea;
     --dark-gray: #252529;
     --gray: #434343;
     --white: #e0e0d7;
@@ -12,7 +13,7 @@
 }
 
 @font-face {
-    font-family: 'Fira Code';
+    font-family: "Fira Code";
     src: url("./assets/FiraCode-VariableFont_wght.ttf");
 }
 
@@ -20,13 +21,15 @@
     margin: 0;
     padding: 0;
     color: var(--white);
-    font-family: 'Fira Code';
+    font-family: "Fira Code";
     font-weight: normal;
 }
 
 body {
     min-height: 100vh;
-    background-color: var(--background-black);
+    background-image: url("./assets/noise.webp");
+    background-color: var(--background-black-opacity);
+    background-blend-mode: overlay;
 }
 
 button {
@@ -51,9 +54,11 @@ a {
 
 button {
     border: 1px solid var(--light-blue);
+    box-shadow: 5px 5px 0 #c9c9c9;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 button:hover {
@@ -88,6 +93,8 @@ button:hover {
     font-weight: bold;
     padding: 30px;
     font-size: 28px;
+    border-bottom: 3px solid var(--black);
+    border-bottom-style: dashed;
 }
 
 .challenges-container {
@@ -104,9 +111,19 @@ button:hover {
     border: 1px solid var(--gray);
     margin: 10px;
     background-color: var(--dark-gray);
+    background-image: url("./assets/noise.webp");
+    background-blend-mode: overlay;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 10px 10px 0px #000000;
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+        box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.challenge-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 20px 20px #00000087;
 }
 
 .challenge-card h4 {
@@ -127,7 +144,7 @@ button:hover {
     width: 300px;
     height: auto;
     cursor: pointer;
-    transition: transform .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .challenge-card .project-img:hover {
@@ -181,7 +198,7 @@ footer img {
     .hero-info h1 {
         font-size: 60px;
     }
-    
+
     .hero-info h2 {
         font-size: 30px;
     }
@@ -201,7 +218,7 @@ footer img {
         background-color: var(--light-gray);
         color: var(--dark-gray);
     }
-    
+
     .hero-info h2 {
         font-size: 24px;
     }
